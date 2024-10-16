@@ -1,4 +1,5 @@
-FROM maven:3.8.5-openjdk-17
+#멀티스테이지 빌드
+FROM maven:3.8.5-openjdk-17 AS builder
 
 # 작업 디렉토리 설정
 WORKDIR /app
@@ -17,7 +18,7 @@ FROM eclipse-temurin:17-jdk AS final
 WORKDIR /app
 
 # 빌드된 jar 파일을 복사
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=builder /app/target/*.jar app.jar
 
 # 애플리케이션 실행
 ENTRYPOINT ["java", "-jar", "app.jar"]
