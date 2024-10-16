@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ciandk3s
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ciandk3s
+  template:
+    metadata:
+      labels:
+        app: ciandk3s
+    spec:
+      containers:
+        - name: ciandk3s
+          image: ghcr.io/hwan-koo/ciandk3s:master
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
