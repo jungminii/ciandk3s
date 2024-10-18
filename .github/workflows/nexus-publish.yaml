@@ -43,7 +43,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.NEXUS_REGISTRY }}/repository/${{ env.IMAGE_NAME }}:latest
+          tags: ${{ env.NEXUS_REGISTRY }}/repository/${{ env.IMAGE_NAME }}/gitaciton:latest
 
       # 6. Log into Nexus registry to pull the image (again, to sync with GHCR)
       - name: Log into Nexus registry
@@ -56,7 +56,7 @@ jobs:
       # 7. Pull Docker image from Nexus
       - name: Pull Docker image from Nexus
         run: |
-          docker pull ${{ env.NEXUS_REGISTRY }}/repository/${{ env.IMAGE_NAME }}:latest
+          docker pull ${{ env.NEXUS_REGISTRY }}/repository/${{ env.IMAGE_NAME }}/gitaction:latest
 
       # 8. Log into GitHub Container Registry (GHCR)
       - name: Log into GitHub Container Registry
@@ -69,9 +69,9 @@ jobs:
       # 9. Tag the pulled image for GitHub Container Registry
       - name: Tag Docker image for GHCR
         run: |
-          docker tag ${{ env.NEXUS_REGISTRY }}/repository/${{ env.IMAGE_NAME }}:latest ${{ env.GHCR_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}/${{ env.IMAGE_NAME }}:latest
+          docker tag ${{ env.NEXUS_REGISTRY }}/repository/${{ env.IMAGE_NAME }}/gitaction:latest ${{ env.GHCR_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}/${{ env.IMAGE_NAME }}/gitaction:latest
 
       # 10. Push Docker image to GHCR
       - name: Push Docker image to GHCR
         run: |
-          docker push ${{ env.GHCR_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}/${{ env.IMAGE_NAME }}:latest
+          docker push ${{ env.GHCR_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}/${{ env.IMAGE_NAME }}/gitaction:latest
