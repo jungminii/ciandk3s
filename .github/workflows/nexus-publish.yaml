@@ -10,7 +10,7 @@ on:
 env:
   NEXUS_REGISTRY: localhost:5443  # Nexus 레지스트리 URL과 포트
   GHCR_REGISTRY: ghcr.io  # GitHub Container Registry URL
-  IMAGE_NAME: ${{ github.repository }}  # 이미지 이름
+  IMAGE_NAME: ciandk3s  # 이미지 이름
   GITHUB_REPOSITORY: ${{ github.repository }}  # GitHub 리포지토리 이름
 
 jobs:
