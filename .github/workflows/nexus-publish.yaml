@@ -57,12 +57,12 @@ jobs:
       #     tags: ${{ env.NEXUS_REGISTRY }}/repository/${{ env.IMAGE_NAME }}/gitaciton:latest
 
       # 6. Log into Nexus registry to pull the image (again, to sync with GHCR)
-      # - name: Log into Nexus registry
-      #   uses: docker/login-action@v2
-      #   with:
-      #     registry: ${{ env.NEXUS_REGISTRY }}
-      #     username: ${{ secrets.NEXUS_USERNAME }}
-      #     password: ${{ secrets.NEXUS_PASSWORD }}
+      - name: Log into Nexus registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.NEXUS_REGISTRY }}
+          username: ${{ secrets.NEXUS_USERNAME }}
+          password: ${{ secrets.NEXUS_PASSWORD }}
 
       - name: Docker build
         run: docker build -t ${{ env.NEXUS_REGISTRY }}/repository/${{ env.IMAGE_NAME }}/gitaciton:latest .
