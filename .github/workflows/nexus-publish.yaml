@@ -65,10 +65,10 @@ jobs:
           password: ${{ secrets.NEXUS_PASSWORD }}
 
       - name: Docker build
-        run: docker build -t ${{ env.NEXUS_REGISTRY }}/repository/${{ env.IMAGE_NAME }}/gitaciton:latest .
+        run: docker build -t ${{ env.NEXUS_REGISTRY }}/repository/${{ env.IMAGE_NAME }}/gitaction:latest .
 
       - name: Docker push
-        run: docker push ${{ env.NEXUS_REGISTRY }}/repository/${{ env.IMAGE_NAME }}/gitaciton:latest
+        run: docker push ${{ env.NEXUS_REGISTRY }}/repository/${{ env.IMAGE_NAME }}/gitaction:latest
 
       # 7. Pull Docker image from Nexus
       - name: Pull Docker image from Nexus
