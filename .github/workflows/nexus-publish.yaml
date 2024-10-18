@@ -36,7 +36,7 @@ jobs:
             -p 8081:8081 \
             -p 5443:5443 \
             -e NEXUS_SECURITY_RANDOMPASSWORD=false \
-            -e NEXUS_ADMIN_PASSWORD=${{ secrets.SECURE_NUM }} \
+            -e NEXUS_ADMIN_PASSWORD=${{ secrets.NEXUS_PASSWORD }} \
             sonatype/nexus3
 
       - name: Wait for Nexus to be ready
