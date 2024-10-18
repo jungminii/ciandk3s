@@ -23,11 +23,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Configure Docker daemon for Insecure Registry
-      - name: Configure Docker for insecure registries
-        run: |
-          echo '{ "insecure-registries": ["localhost:5443"] }' | sudo tee /etc/docker/daemon.json
-          sudo systemctl restart docker
+
 
       # 3. Setup Docker buildx
       - name: Setup Docker buildx
