@@ -15,7 +15,8 @@ env:
 
 jobs:
   build-and-sync:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+
 
     steps:
       # 1. Checkout repository
