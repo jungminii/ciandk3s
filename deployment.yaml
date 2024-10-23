@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: ciandk3s
-          image: ghcr.io/hwan-koo/ciandk3s:master
+          image: aksaz01devvvd01registry.azurecr.io/jungminii/ciandk3s:20241023151006
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
