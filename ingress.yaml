@@ -15,7 +15,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: jungmin
+            name: ciandk3s
             port:
               number: 80
   tls: []
