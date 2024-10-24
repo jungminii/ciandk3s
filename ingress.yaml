@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: webapprouting.kubernetes.azure.com
   rules:
-  - host: jungmin.10.241.163.143.nip.io
+  - host: jungmin.kt.co.kr
     http:
       paths:
       - path: /
