@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jm
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+spec:
+  ingressClassName: webapprouting.kubernetes.azure.com
+  rules:
+  - host: jungmin.10.241.163.143.nip.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: jungmin
+            port:
+              number: 80
+  tls: []
